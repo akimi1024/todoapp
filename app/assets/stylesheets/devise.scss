@@ -1,0 +1,39 @@
+.devise{
+  &_title{
+    // font-size: 26px;
+    line-height: 36px;
+    color: black;
+    margin: 15px 0 15px 0;
+  }
+
+  .field{
+    color: black;
+    margin: 25px 0 25px 0;
+  }
+
+  &_btn{
+    padding-top: 10px;
+    position: relative;
+    }
+
+    .actions {
+      position: relative;
+
+      .devise_btn-primary{
+          background-color: $primary-color;
+          border: none;
+          width: 100%;
+          text-align: center;
+          color: white;
+          padding: 16px 0;
+          font-weight: bold;
+          position: absolute;
+          top: 280px;
+      }
+    }
+  
+  &_link{
+    margin-top: 360px;
+  }
+
+}
