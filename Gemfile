@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'hamlit'
 gem "net-http"
+gem 'annotate'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
