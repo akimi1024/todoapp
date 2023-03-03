@@ -1,14 +1,14 @@
-@import 'variables';
+@import './variables';
 
 .btn-primary {
   background-color: $primary-color;
   border: none;
-  width: 100%;
   text-align: center;
   color: white;
   padding: 16px 0;
   font-weight: bold;
-  top: 250px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .btn-secondary {

@@ -3,6 +3,7 @@
 @import 'devise';
 @import 'form';
 @import 'buttons';
+@import 'board';
 
 html {
   word-spacing: 1px;
@@ -25,7 +26,7 @@ body {
   height: 100%;
   background-color: $base-bg-color;
   font-size: 1em;
-  color: $text-base-color;
+  color: black;
 }
 
 a {
