@@ -10,11 +10,15 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
     
-    %header
+    %header.header
       .header_logos
-        %p Boards
-      .header_icom
-        -# = image_tag 'Oval.png', class: 'header_avatar dropbtn'
-    %p.notice= notice
-    %p.alert= alert
+        %p.header_pageTitle 
+          = link_to 'Boards', root_path
+      - if user_signed_in?
+        .dropdown
+          = image_tag 'Oval.png', class: 'header_avatar dropbtn'
+    - if flash.present?
+      .flash 
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield
