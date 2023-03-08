@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @boards = Board.all
@@ -23,12 +23,23 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    @board = current_user.boards.find(params[:id])
   end
 
   def updated
+    @board = current_user.boards.find(params[:id])
+    if @board.pudate(board_params)
+      render_to board_path(@board), notice: '更新しました'
+    else
+      flash.now[:error] = '更新できませんでした'
+      render :edit
+    end
   end
 
   def destroy
+    board = current_user.boards.find(params[:id])
+    board.destroy!
+    redirect_to root_path, notice: '削除しました'
   end
 
   private

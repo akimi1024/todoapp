@@ -61,6 +61,8 @@ $container-padding: 16px;
 
   &_content {
     clear: both;
+    color: $text-base-color;
+    padding-left: 8px;
   }
 
   &_heart {
