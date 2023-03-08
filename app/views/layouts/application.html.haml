@@ -17,6 +17,8 @@
       - if user_signed_in?
         .dropdown
           = image_tag 'Oval.png', class: 'header_avatar dropbtn'
-    %p.notice= notice
-    %p.alert= alert
+    - if flash.present?
+      .flash 
+        - flash.each do |key, value|
+          %div{:class => key}= value
     = yield
