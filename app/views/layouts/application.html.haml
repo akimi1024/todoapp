@@ -9,8 +9,12 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
   %body
+    
     %header
-      %p Boards
+      .header_logos
+        %p Boards
+      .header_icom
+        -# = image_tag 'Oval.png', class: 'header_avatar dropbtn'
     %p.notice= notice
     %p.alert= alert
     = yield
