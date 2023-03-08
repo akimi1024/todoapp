@@ -1,8 +1,37 @@
+@import 'variables';
+
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
 header{
   p {
     font-size: 18px;
     padding: 17px;
     color: black;
     border-bottom: 1px solid black;
+  }
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+
+    img {
+      cursor: pointer;
+      width: $back-icon-size;
+      height: $back-icon-size;
+      margin: ($avatar-size - $back-icon-size) / 2 8px 0;
+      font: optional;
+    }
+  }
+
+  &_icom{
+    float: right;
+  }
+
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
   }
 }
