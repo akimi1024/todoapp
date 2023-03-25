@@ -1,21 +1,24 @@
 $heart-size: 32px;
 $avatar-size: 32px;
-$container-padding: 16px;
+$container-padding: 8px;
+$container-halfpadding: 8px;
 
 .board {
   background-color: white;
-  margin: 16px 16px;
-  padding: $container-padding $container-padding;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin: 8px 8px;
+  padding: $container-padding*2 $container-padding 8px $container-padding;
   position: relative;
 
   &_image {
-    height: 180px;
+    margin-top: 30px;
+    height: 230px;
     position: relative;
     overflow: hidden;
     margin: $container-padding * -1 $container-padding * -1 16px;
+    border-radius: 10px;
 
     img {
+      // margin-top: 30px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -24,6 +27,9 @@ $container-padding: 16px;
       transform: translate(-50%, -50%);
       width: 100%;
     }
+  }
+  h1 {
+    margin-bottom: 30px;
   }
 
   h2 {

@@ -2,8 +2,12 @@ class TasksController < ApplicationController
   
 
   def index
-    @board = board_params
-    @tasks = Task.all
+    board = board_params
+
+  end
+
+  def show
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -16,7 +20,7 @@ class TasksController < ApplicationController
     @task = board.tasks.build(task_params)
     @task.user_id = current_user.id
     if @task.save
-      redirect_to board_tasks_path(board), notice: 'タスクを追加'
+      redirect_to board_path(board), notice: 'タスクを追加'
     else
       flash.now[:error] = '保存できませんでした'
       render :new
@@ -34,7 +38,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:task_title, :task_content, :eyecatch, :ststus, :limit)
+    params.require(:task).permit(:task_title, :task_content, :ststus, :limit, :eyecatch)
 
   end
 
