@@ -6,7 +6,7 @@
       .card_content 
         .card_title 
           = board.title
-        - if user_signed_in? && current_user.has_written?(board)
+        - if user_signed_in? && current_user.board_has_written?(board)
           .board_detail_actions 
             .dropdown 
               = image_tag 'actions.svg', class: 'dropdbtn'

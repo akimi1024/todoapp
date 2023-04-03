@@ -34,6 +34,11 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    task = current_user.tasks.find(params[:id])
+    binding.pry
+    task.destroy!
+    redirect_to board_path(task.board_id), notice: 'cardを削除しました'
+
   end
 
   private

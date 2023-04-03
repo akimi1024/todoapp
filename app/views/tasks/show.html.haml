@@ -1,6 +1,6 @@
 .container
   %h1= @task.task_title
-  - if user_signed_in? && current_user.has_written?(@task)
+  - if user_signed_in? && current_user.task_has_written?(@task)
     .board_detail_actions
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
