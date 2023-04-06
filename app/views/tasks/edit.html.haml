@@ -1,0 +1,19 @@
+.container
+  %ul
+    - @task.errors.full_messages.each do |message|
+      %li= message
+  
+  = form_with(model: @task, url:board_task_path, method: 'put',  local: true) do |f|
+    %div
+      = f.label :eyecatch, 'アイキャッチ'
+    %div
+      = f.file_field :eyecatch
+    %div
+      = f.label :title, 'タイトル'
+    %div
+      = f.text_field :task_title, class: 'text'
+    %div
+      = f.label :content, '内容'
+    %div
+      = f.text_area :task_content
+    = f.submit '保存', class: 'btn-primary'

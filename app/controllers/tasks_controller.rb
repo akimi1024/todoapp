@@ -28,14 +28,20 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = current_user.tasks.find(params[:id])
   end
 
   def update
+    @task = current_user.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to board_task_path(@task), notice: '更新しました'
+    else
+      flash.now[:error] = '更新できませんでした'
+    end
   end
 
   def destroy
     task = current_user.tasks.find(params[:id])
-    binding.pry
     task.destroy!
     redirect_to board_path(task.board_id), notice: 'cardを削除しました'
 

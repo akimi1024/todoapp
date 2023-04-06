@@ -30,7 +30,7 @@ class BoardsController < ApplicationController
 
   def updated
     @board = current_user.boards.find(params[:id])
-    if @board.pudate(board_params)
+    if @board.upudate(board_params)
       render_to board_path(@board), notice: '更新しました'
     else
       flash.now[:error] = '更新できませんでした'
