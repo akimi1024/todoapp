@@ -16,6 +16,7 @@ $container-halfpadding: 8px;
     overflow: hidden;
     margin: $container-padding * -1 $container-padding * -1 16px;
     border-radius: 10px;
+    clear: both;
 
     img {
       // margin-top: 30px;

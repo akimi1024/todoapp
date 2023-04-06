@@ -15,8 +15,7 @@
         %p.header_pageTitle 
           = link_to 'Boards', root_path
       - if user_signed_in?
-        .dropdown
-          = image_tag 'Oval.png', class: 'header_avatar dropbtn'
+        = image_tag 'Oval.png', class: 'header_avatar dropbtn'
     - if flash.present?
       .flash 
         - flash.each do |key, value|

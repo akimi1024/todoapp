@@ -1,5 +1,5 @@
 .container
-  %h1= @task.task_title
+  %h1.showtitle= @task.task_title
   - if user_signed_in? && current_user.task_has_written?(@task)
     .board_detail_actions
       .dropdown
@@ -7,10 +7,9 @@
         .dropdown-content.mini
           = link_to '編集する', edit_board_task_path(@task)
           = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもいいですか' }
-  .board
-    - if @task.eyecatch.attached?
-      .board_image 
-        = image_tag @task.eyecatch
+  - if @task.eyecatch.attached?
+    .card_image 
+      = image_tag @task.eyecatch
   .card 
     .card_content 
       .card_title 

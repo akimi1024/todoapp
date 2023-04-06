@@ -7,6 +7,14 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-right: 35px;
+  margin-top: 15px;
+  float: right;
+}
+
+.showtitle {
+  float: left;
+  margin-bottom: 20px;
 }
 
 .dropdown-content {
