@@ -1,0 +1,19 @@
+.container
+  %h1.showtitle= @task.task_title
+  - if user_signed_in? && current_user.task_has_written?(@task)
+    .board_detail_actions
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          = link_to '編集する', edit_board_task_path(@task)
+          = link_to '削除する', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもいいですか' }
+  - if @task.eyecatch.attached?
+    .card_image 
+      = image_tag @task.eyecatch
+  .card 
+    .card_content 
+      .card_title 
+        = @task.task_content 
+  %h2.title Comment
+
+

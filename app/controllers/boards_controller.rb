@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :set_board, only: [:show]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -6,7 +7,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find(params[:id])
+    @tasks = @board.tasks
   end
 
   def new
@@ -29,7 +30,7 @@ class BoardsController < ApplicationController
 
   def updated
     @board = current_user.boards.find(params[:id])
-    if @board.pudate(board_params)
+    if @board.upudate(board_params)
       render_to board_path(@board), notice: '更新しました'
     else
       flash.now[:error] = '更新できませんでした'
@@ -46,5 +47,9 @@ class BoardsController < ApplicationController
   private
   def board_params
     params.require(:board).permit(:title, :content)
+  end
+
+  def set_board
+    @board = Board.find(params[:id])
   end
 end
