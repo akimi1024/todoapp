@@ -23,6 +23,8 @@ class Task < ApplicationRecord
   belongs_to :user
   belongs_to :board
 
+  has_many :comment, dependent: :destroy
+
   validates :title, null: false
   validates :content, null: false
 end
