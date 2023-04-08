@@ -1,10 +1,4 @@
 class TasksController < ApplicationController
-  
-
-  def index
-    board = board_params
-
-  end
 
   def show
     @task = Task.find(params[:id])
