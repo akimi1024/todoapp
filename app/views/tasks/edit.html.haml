@@ -3,7 +3,7 @@
     - @task.errors.full_messages.each do |message|
       %li= message
   
-  = form_with(model: @task, url:board_task_path, method: 'put',  local: true) do |f|
+  = form_with(model: @task, url:task_path, local: true) do |f|
     %div
       = f.label :eyecatch, 'アイキャッチ'
     %div
