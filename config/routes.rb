@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'boards#index'
   resources :boards do
-    resources :tasks, only: [:show, :new, :create, :edit, :update, :destroy]
+    resources :tasks, only: [:new, :create] 
   end
+
+  resources :tasks, only: [:show, :edit, :update, :destroy] do
+    resources :comments, only: [:new, :create]
+  end
+
+  resources :comments, only: [:edit]
 end

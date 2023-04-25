@@ -3,7 +3,7 @@
 # Table name: comments
 #
 #  id              :bigint           not null, primary key
-#  Comment_content :text             not null
+#  comment_content :text             not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  task_id         :bigint           not null
@@ -17,4 +17,6 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :task
+
+  validates :comment_content, null: false
 end

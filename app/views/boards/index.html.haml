@@ -1,11 +1,11 @@
 .container
   %h1.title All Boards 
   - @boards.each do |board|
-    -# = link_to board_path(board) do
-    .card 
-      .card_content 
-        .card_title 
-          = board.title
+    = link_to board_path(board) do
+      .card 
+        .card_content 
+          .card_title 
+            = board.title
         - if user_signed_in? && current_user.board_has_written?(board)
           .board_detail_actions 
             .dropdown 
